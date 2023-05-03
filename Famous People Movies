@@ -1,0 +1,70 @@
+CREATE TABLE people (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, relationship_status TEXT);
+
+INSERT INTO people VALUES (1, "Blake Lively", 35, "married");
+INSERT INTO people VALUES (2, "Scarlett Johansson", 38, "married");
+INSERT INTO people VALUES (3, "Ryan Gosling", 42, "married");
+INSERT INTO people VALUES (4, "Chris Evens", 41, "single");
+INSERT INTO people VALUES (5, "Tom Holland", 26, "dating"); 
+INSERT INTO people VALUES (6, "Matthew McConaughey", 53, "married");
+INSERT INTO people VALUES (7, "Tom Cruise", 60, "divorced");
+INSERT INTO people VALUES (8, "Adam Sandler", 56, "married ");
+INSERT INTO people VALUES (9, "Angelina Jolie", 47, "divorced");
+INSERT INTO people VALUES (10, "Mila Kunis", 39, "married");
+INSERT INTO people VALUES (11, "Kristen Bell", 42, "married");
+INSERT INTO people VALUES (12, "Tina Fey", 52, "married");
+INSERT INTO people VALUES (13, "Glen Powell", 34, "single");
+INSERT INTO people VALUES (14, "Leonardo DiCaprio", 48, "single");
+INSERT INTO people VALUES (15, "Emma Stone", 34, "married");
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY,
+    people_id INTEGER, 
+    top_movie TEXT, 
+    number_of_movies INTEGER);
+
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (1, "The Age of Adaline", 25);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (2, "Black Widow", 66);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (3, "La La Land", 36);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (4, "Captin America", 54);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (5, "Spirder Man: No Way Home", 32);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (6, "Inerstellar", 57);
+INSERT INTO movies (people_id, top_movie , number_of_movies)    
+    VALUES (7, "Top Gun", 49);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (8, "Grown Ups", 61);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (9, "Maleficent", 47);
+INSERT INTO movies (people_id, top_movie , number_of_movies) 
+    VALUES (10, "Friends With Benefits", 38);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (11, "Forgeting Sarah Marshall", 45);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (12, "Mean Girls", 29);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (13, "Devotion", 22);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (14, "Titanic", 68);
+INSERT INTO movies (people_id, top_movie, number_of_movies) 
+    VALUES (15, "La La Land", 39);
+
+SELECT * FROM people;
+
+SELECT * FROM movies;
+
+/* cross join */ 
+SELECT * FROM people, movies
+
+/* implicit inner join */
+SELECT * FROM people, movies
+    WHERE people.id = movies.people_id;
+    
+/* explicit inner join - JOIN */
+SELECT name, number_of_movies, top_movie FROM people
+    JOIN movies
+    ON people.id = movies.people_id;
+    
