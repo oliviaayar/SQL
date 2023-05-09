@@ -1,6 +1,6 @@
---
+--In this SQL, I queried a database with multiple tables to answer the following questions 
 
-#Below are the inital querries that I ran to check out the tables and become familier with the information that is listed. 
+#Below are the inital comamands that I ran to check out the tables and become familier with the information that is listed. 
   SELECT * FROM chinook.albums; 
   SELECT * FROM chinook.artists; 
   SELECT * FROM chinook.customers;
@@ -12,9 +12,6 @@
   SELECT * FROM chinook.playlist_track;
   SELECT * FROM chinook.playlist;
   SELECT * FROM chinook.tracks;
-
-##Below are questions and answers 
-
 
 --Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to")
 SELECT FirstName, LastName, CustomerId, country FROM chinook.customers 
